@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6BB8667D-4096-49A0-A5BE-1AAAB5AF7646}</ProjectGuid>
+    <ProjectGuid>{ED6BB3AD-9830-4724-B044-E6ABD92DD4E8}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>KD3005P_GUI</RootNamespace>
@@ -76,6 +76,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\SevenSegment-master\SevenSegment\SevenSegment.csproj">
+      <Project>{00DB5A9C-12D3-43B0-9E4A-D9ECA873F5C9}</Project>
+      <Name>SevenSegment</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

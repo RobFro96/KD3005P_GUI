@@ -12,9 +12,12 @@ namespace KD3005P_GUI
 {
     public partial class Form1 : Form
     {
+        int x = 0;
+
         public Form1()
         {
             InitializeComponent();
+            this.sevenSegmentArray1.Value = x + " .";
         }
     }
 }
