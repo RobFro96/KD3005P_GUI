@@ -12,12 +12,17 @@ namespace KD3005P_GUI
 {
     public partial class Form1 : Form
     {
-        int x = 0;
+        private Display display;
 
         public Form1()
         {
             InitializeComponent();
-            this.sevenSegmentArray1.Value = x + " .";
+
+            this.display = new Display(this.sevenSegmentArray1, this.sevenSegmentArray2, this.sevenSegmentArray3, this.sevenSegmentArray4);
+            this.display.VoltageLimit.Clear();
+            this.display.CurrentLimit.Clear();
+            this.display.VoltageIs.Clear();
+            this.display.CurrentIs.Clear();
         }
     }
 }
