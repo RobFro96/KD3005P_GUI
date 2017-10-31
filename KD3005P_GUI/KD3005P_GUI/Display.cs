@@ -13,11 +13,23 @@ namespace KD3005P_GUI
         {
             private int value, commaPosition;
             private SevenSegmentArray display;
+            private bool blinking;
 
             public SegmentDisplay(SevenSegmentArray display, int commaPosition)
             {
                 this.display = display;
                 this.commaPosition = commaPosition;
+            }
+
+            public int BlinkingDigit;
+            public bool Blinking
+            {
+                get { return this.blinking; }
+                set
+                {
+                    this.blinking = value;
+                    this.Redraw();
+                }
             }
 
             public int Value
@@ -35,10 +47,12 @@ namespace KD3005P_GUI
 
             private void Redraw()
             {
-                String text = value.ToString();
+                String text = value.ToString("D4");
 
-                if (value < 1000)
-                    text = " " + text;
+                if (Blinking && BlinkingDigit != -1)
+                {
+                    text = text.Substring(0, BlinkingDigit) + " " + text.Substring(BlinkingDigit + 1);
+                }
 
                 if (commaPosition > -1)
                     text = text.Insert(commaPosition, ".");
