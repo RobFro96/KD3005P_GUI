@@ -291,6 +291,8 @@ namespace KD3005P_GUI
         private void LoadStatus()
         {
             string output = SerialPortSendString("STATUS?");
+            if (output == null)
+                return;
             int c = output[0];
 
             if ((c & 1) != 0)
